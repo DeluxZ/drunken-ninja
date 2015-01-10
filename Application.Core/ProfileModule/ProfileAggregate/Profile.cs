@@ -41,29 +41,14 @@ namespace Application.Core.ProfileModule.ProfileAggregate
         {
             var validationResults = new List<ValidationResult>();
 
-            if(!String.IsNullOrWhiteSpace(this.FirstName)){
-
-                validationResults.Add(new ValidationResult(
-                    Messages.validation_ProfileFirstNameCannotBeNull,
-                    new string[] { "FirstName" }
-                ));
-            }
+            if (!String.IsNullOrWhiteSpace(this.FirstName))
+                validationResults.Add(new ValidationResult(Messages.validation_ProfileFirstNameCannotBeNull, new string[] { "FirstName" }));
 
             if (!String.IsNullOrWhiteSpace(this.LastName))
-            {
-                validationResults.Add(new ValidationResult(
-                    Messages.validation_ProfileLastNameCannotBeBull,
-                    new string[] { "LastName" }
-                ));
-            }
+                validationResults.Add(new ValidationResult(Messages.validation_ProfileLastNameCannotBeBull, new string[] { "LastName" }));
 
             if (!String.IsNullOrWhiteSpace(this.Email))
-            {
-                validationResults.Add(new ValidationResult(
-                    Messages.validation_ProfileEmailCannotBeBull,
-                    new string[] { "Email" }
-                ));
-            }
+                validationResults.Add(new ValidationResult(Messages.validation_ProfileEmailCannotBeBull, new string[] { "Email" }));
 
             return validationResults;
         }

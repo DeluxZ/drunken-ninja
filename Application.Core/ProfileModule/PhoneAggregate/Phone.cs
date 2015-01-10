@@ -37,12 +37,7 @@ namespace Application.Core.ProfileModule.PhoneAggregate
             var validationResults = new List<ValidationResult>();
 
             if (String.IsNullOrWhiteSpace(this.Number))
-            {
-                validationResults.Add(new ValidationResult(
-                    Messages.validation_PhoneNumberCannotBeNull,
-                    new string[] { "Number" }
-                ));
-            }
+                validationResults.Add(new ValidationResult(Messages.validation_PhoneNumberCannotBeNull, new string[] { "Number" }));
 
             return validationResults;
         }

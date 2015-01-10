@@ -133,7 +133,12 @@ namespace Application.Common.Logging
 
         public void LogWarning(string message, params object[] args)
         {
-            throw new NotImplementedException();
+            if (!String.IsNullOrWhiteSpace(message))
+            {
+                var messageToTrace = string.Format(CultureInfo.InvariantCulture, message, args);
+
+                TraceInternal(TraceEventType.Warning, messageToTrace);
+            }
         }
 
         /// <summary>

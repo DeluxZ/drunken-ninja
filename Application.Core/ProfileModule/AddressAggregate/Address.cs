@@ -42,52 +42,25 @@ namespace Application.Core.ProfileModule.AddressAggregate
             var validationResults = new List<ValidationResult>();
 
             if (String.IsNullOrWhiteSpace(this.AddressLine1))
-            {
-                validationResults.Add(new ValidationResult(
-                    Messages.validation_AddressAddressLine1CannotBeNull,
-                    new string[] { "AddressLine1" }
-                ));
-            }
+                validationResults.Add(new ValidationResult(Messages.validation_AddressAddressLine1CannotBeNull, new string[] { "AddressLine1" }));
 
             if (String.IsNullOrWhiteSpace(this.AddressLine2))
-            {
-                validationResults.Add(new ValidationResult(
-                    Messages.validation_AddressAddressLine2CannotBeBull,
-                    new string[] { "AddressLine2" }
-                ));
-            }
+                validationResults.Add(new ValidationResult(Messages.validation_AddressAddressLine2CannotBeBull, new string[] { "AddressLine2" }));
+
 
             if (String.IsNullOrWhiteSpace(this.City))
-            {
-                validationResults.Add(new ValidationResult(
-                    Messages.validation_AddresscityCannotBeEmpty,
-                    new string[] { "City" }
-                ));
-            }
+                validationResults.Add(new ValidationResult(Messages.validation_AddresscityCannotBeEmpty, new string[] { "City" }));
+
 
             if (String.IsNullOrWhiteSpace(this.Country))
-            {
-                validationResults.Add(new ValidationResult(
-                    Messages.validation_AddressCountryCannotBeEmpty,
-                    new string[] { "Country" }
-                ));
-            }
+                validationResults.Add(new ValidationResult(Messages.validation_AddressCountryCannotBeEmpty, new string[] { "Country" }));
+
 
             if (String.IsNullOrWhiteSpace(this.State))
-            {
-                validationResults.Add(new ValidationResult(
-                    Messages.validation_AddressStateCannotBeEmpty,
-                    new string[] { "State" }
-                ));
-            }
+                validationResults.Add(new ValidationResult(Messages.validation_AddressStateCannotBeEmpty, new string[] { "State" }));
 
             if (String.IsNullOrWhiteSpace(this.ZipCode))
-            {
-                validationResults.Add(new ValidationResult(
-                    Messages.validation_ZipCodeCannotBeBull,
-                    new string[] { "ZipCode" }
-                ));
-            }
+                validationResults.Add(new ValidationResult(Messages.validation_ZipCodeCannotBeBull, new string[] { "ZipCode" }));
 
             return validationResults;
         }

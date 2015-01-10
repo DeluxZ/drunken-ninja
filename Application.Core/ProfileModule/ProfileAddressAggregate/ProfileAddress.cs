@@ -79,7 +79,12 @@ namespace Application.Core.ProfileModule.ProfileAddressAggregate
         /// <param name="addressId"></param>
         public void SetTheAddressReference(int addressId)
         {
-            throw new NotImplementedException();
+            if (addressId != 0)
+            {
+                // Fix relation
+                this.AddressId = addressId,
+                this.Address = null;
+            }
         }
 
         /// <summary>
@@ -104,7 +109,12 @@ namespace Application.Core.ProfileModule.ProfileAddressAggregate
         /// <param name="addressTypeId"></param>
         public void SetTheAddressTypeReference(int addressTypeId)
         {
-            throw new NotImplementedException();
+            if (addressTypeId != 0)
+            {
+                // Fix relation
+                this.AddressTypeId = addressTypeId;
+                this.AddressType = null;
+            }
         }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
@@ -112,28 +122,13 @@ namespace Application.Core.ProfileModule.ProfileAddressAggregate
             var validationResults = new List<ValidationResult>();
 
             if (this.ProfileId == 0)
-            {
-                validationResults.Add(new ValidationResult(
-                    Messages.validation_ProfileAddressProfileIDCannotBeEmpty,
-                    new string[] { "ProfileId" }
-                ));
-            }
+                validationResults.Add(new ValidationResult(Messages.validation_ProfileAddressProfileIDCannotBeEmpty, new string[] { "ProfileId" }));
 
             if (this.AddressId == 0)
-            {
-                validationResults.Add(new ValidationResult(
-                    Messages.validation_ProfileAddressAddressIDCannotBeEmpty,
-                    new string[] { "AddressId" }
-                ));
-            }
+                validationResults.Add(new ValidationResult(Messages.validation_ProfileAddressAddressIDCannotBeEmpty, new string[] { "AddressId" }));
 
             if (this.AddressTypeId == 0)
-            {
-                validationResults.Add(new ValidationResult(
-                    Messages.validation_ProfileAddressAddressTypeIDCannotBeEmpty,
-                    new string[] { "AddressTypeId" }
-                ));
-            }
+                validationResults.Add(new ValidationResult(Messages.validation_ProfileAddressAddressTypeIDCannotBeEmpty, new string[] { "AddressTypeId" }));
 
             return validationResults;
         }
