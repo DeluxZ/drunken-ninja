@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Application.Core.ProfileModule.ProfileAggregate
 {
-    interface IProfileRepository
+    /// <summary>
+    /// Base contract for Profile repository
+    /// </summary>
+    public interface IProfileRepository : IRepository<Profile>
     {
     }
 }

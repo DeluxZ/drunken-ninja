@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Application.Core.ProfileModule.ProfilePhoneAggregate
 {
-    interface IProfilePhoneRepository
+    /// <summary>
+    /// Base contract for ProfilePhone repository
+    /// </summary>
+    public interface IProfilePhoneRepository : IRepository<ProfilePhone>
     {
     }
 }

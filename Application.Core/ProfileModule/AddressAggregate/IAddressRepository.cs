@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Application.Core.ProfileModule.AddressAggregate
 {
-    interface IAddressRepository
+    /// <summary>
+    /// Base contract for Address repository
+    /// </summary>
+    public interface IAddressRepository : IRepository<Address>
     {
     }
 }

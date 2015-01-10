@@ -6,7 +6,37 @@ using System.Threading.Tasks;
 
 namespace Application.Core.ProfileModule.ProfileAggregate
 {
-    class ProfileFactory
+    /// <summary>
+    /// This is the factory for Profile creation
+    /// </summary>
+    public static class ProfileFactory
     {
+        /// <summary>
+        /// Create a new Profile
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="email"></param>
+        /// <param name="createdBy"></param>
+        /// <param name="created"></param>
+        /// <param name="updatedBy"></param>
+        /// <param name="updated"></param>
+        /// <returns></returns>
+        public static Profile CreateProfile(string firstName, string lastName, string email, string createdBy, DateTime created, string updatedBy, DateTime updated)
+        {
+            Profile profile = new Profile
+            {
+                FirstName = firstName,
+                LastName = lastName,
+                Email = email,
+                CreatedBy = createdBy,
+                Created = created,
+                UpdatedBy = updatedBy,
+                Updated = updated,
+            };
+
+            return profile;
+        }
+
     }
 }
