@@ -82,7 +82,7 @@ namespace Application.Core.ProfileModule.ProfileAddressAggregate
             if (addressId != 0)
             {
                 // Fix relation
-                this.AddressId = addressId,
+                this.AddressId = addressId;
                 this.Address = null;
             }
         }

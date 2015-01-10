@@ -27,7 +27,7 @@ namespace Application.Core
         /// If the entity have fixed properties and any optimistic concurrency problem exists,
         /// then 'client changes' are refreshed - Client wints
         /// </remarks>
-        void COmmitAndRefreshChanges();
+        void CommitAndRefreshChanges();
 
         /// <summary>
         /// Rollback tracked changes. See references of UnitOfWork pattern.

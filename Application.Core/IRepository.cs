@@ -17,7 +17,7 @@ namespace Application.Core
         /// <summary>
         /// Get the unit of work in this repository
         /// </summary>
-        IUnitOfWork UnitOfWork { get; set; }
+        IUnitOfWork UnitOfWork { get; }
 
         /// <summary>
         /// Add item into repository
