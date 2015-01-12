@@ -60,6 +60,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Application.Common\Application.Common.csproj">
+      <Project>{d054f593-d2e7-4c73-ad82-1121714cfac0}</Project>
+      <Name>Application.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Application.Core\Application.Core.csproj">
       <Project>{c5e1f6e9-66d6-4221-9924-ac6cc222cb64}</Project>
       <Name>Application.Core</Name>
