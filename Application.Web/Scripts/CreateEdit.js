@@ -9,8 +9,8 @@ $.ajax({
     async: false,
     dataType: 'json',
     success: function (json) {
-        AddressTypeData = json.lstAddressTypeDTO;
-        PhoneTypeData = json.lstPhoneTypeDTO;
+        AddressTypeData = json.AddressTypeDTO;
+        PhoneTypeData = json.PhoneTypeDTO;
     }
 });
 
@@ -30,7 +30,7 @@ $(function () {
         var self = this;
         self.PhoneId = ko.observable(phone ? phone.PhoneId : 0);
         self.PhoneTypeId = ko.observable(phone ? phone.PhoneTypeId : undefined).extend({ required: true });
-        self.Number = ko.observable(phone ? phone.Number : '').extend({ required: true, maxLength: 25, phoneUS: true });
+        self.Number = ko.observable(phone ? phone.Number : '').extend({ required: true, maxLength: 25 });
     };
 
     var AddressLine = function (address) {
@@ -124,7 +124,7 @@ $(function () {
                 $.ajax({
                     type: (self.profile().ProfileId > 0 ? 'PUT' : 'POST'),
                     cache: false,
-                    dataType: 'json',
+                    //dataType: 'json',
                     url: urlContact + (self.profile().ProfileId > 0 ? '/UpdateProfileInformation?id=' + self.profile().ProfileId : '/SaveProfileInformation'),
                     data: JSON.stringify(ko.toJS(self.profile())),
                     contentType: 'application/json; charset=utf-8',

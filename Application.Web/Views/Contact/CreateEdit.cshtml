@@ -32,7 +32,7 @@
     <tbody data-bind='foreach: phoneNumbers'>
         <tr>
             <td>
-                <select data-bind="options: phoneTypeData, value: PhoneTypeId, optionsValue: 'PhoneTypeId', optionsText: 'Name', optionsCaption: 'Select Phone Type...'"></select>
+                <select data-bind="options: PhoneTypeData, value: PhoneTypeId, optionsValue: 'PhoneTypeId', optionsText: 'Name', optionsCaption: 'Select Phone Type...'"></select>
             </td>
             <td>
                 <input class="input-large" data-bind='value:Number' placeholder="Number" />
@@ -86,3 +86,9 @@
 <input class="btn btn-sm btn-primary" type="button" value="Back To Profile List" data-bind="click:$root.backToProfileList" />
 
 <script src="~/Scripts/CreateEdit.js"></script>
+<style>
+    .validationMessage {
+        color: red;
+        font-size: 0.8em;
+    }
+</style>
