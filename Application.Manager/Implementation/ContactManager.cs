@@ -74,7 +74,7 @@ namespace Application.Manager.Implementation
                 throw new ArgumentException(Messages.warning_InvalidArgumentForFindProfiles);
 
             // Recover profiles in paged fashion
-            IEnumerable<Profile> profiles = _profileRepository.GetPaged<DateTime>(pageIndex, pageCount, o => o.Created, false);
+            List<Profile> profiles = _profileRepository.GetPaged<DateTime>(pageIndex, pageCount, o => o.Created, false).ToList();
 
             if (profiles != null && profiles.Any())
             {
@@ -280,6 +280,8 @@ namespace Application.Manager.Implementation
             {
                 _profileAddressRepository.Add(profileAddress);
                 _profileAddressRepository.UnitOfWork.Commit();
+
+                return;
             }
 
             throw new ApplicationValidationErrorsException(entityValidator.GetInvalidMessages(profileAddress));
@@ -368,6 +370,8 @@ namespace Application.Manager.Implementation
             {
                 _addressRepository.Merge(currentAddress, updatedAddress);
                 _addressRepository.UnitOfWork.Commit();
+
+                return;
             }
 
             throw new ApplicationValidationErrorsException(entityValidator.GetInvalidMessages(updatedAddress));
@@ -446,6 +450,8 @@ namespace Application.Manager.Implementation
             {
                 _profilePhoneRepository.Add(profilePhone);
                 _profilePhoneRepository.UnitOfWork.Commit();
+
+                return;
             }
 
             throw new ApplicationValidationErrorsException(entityValidator.GetInvalidMessages(profilePhone));
@@ -528,6 +534,8 @@ namespace Application.Manager.Implementation
             {
                 _phoneRepository.Merge(currentPhone, updatedPhone);
                 _phoneRepository.UnitOfWork.Commit();
+
+                return;
             }
 
             throw new ApplicationValidationErrorsException(entityValidator.GetInvalidMessages(updatedPhone));
