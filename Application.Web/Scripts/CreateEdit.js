@@ -122,10 +122,10 @@ $(function () {
                 self.profile().PhoneDTO = self.phoneNumbers;
 
                 $.ajax({
-                    type: (self.profile().ProfileId > 0 ? 'PUT' : 'POST'),
+                    type: (self.profile().ProfileId() > 0 ? 'PUT' : 'POST'),
                     cache: false,
                     //dataType: 'json',
-                    url: urlContact + (self.profile().ProfileId > 0 ? '/UpdateProfileInformation?id=' + self.profile().ProfileId : '/SaveProfileInformation'),
+                    url: urlContact + (self.profile().ProfileId() > 0 ? '/UpdateProfileInformation?id=' + self.profile().ProfileId() : '/SaveProfileInformation'),
                     data: JSON.stringify(ko.toJS(self.profile())),
                     contentType: 'application/json; charset=utf-8',
                     async: false,
