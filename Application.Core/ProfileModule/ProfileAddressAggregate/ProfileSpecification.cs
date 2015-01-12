@@ -1,5 +1,6 @@
 ﻿using Application.Core.ProfileModule.ProfileAggregate;
 using Application.Core.Specification;
+using Application.Core.Specification.Implementation;
 using System;
 using System.Collections.Generic;
 using System.Linq;

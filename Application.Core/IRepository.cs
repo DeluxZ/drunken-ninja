@@ -13,6 +13,7 @@ namespace Application.Core
     /// </summary>
     /// <typeparam name="T">Type of entity for this repository</typeparam>
     public interface IRepository<T> : IDisposable
+        where T : class
     {
         /// <summary>
         /// Get the unit of work in this repository
