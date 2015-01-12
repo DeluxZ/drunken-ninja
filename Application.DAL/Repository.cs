@@ -37,19 +37,6 @@ namespace Application.DAL
             }
         }
 
-        IUnitOfWork IRepository<T>.UnitOfWork
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
         public void Add(T item)
         {
             if (item != (T)null)
@@ -141,7 +128,8 @@ namespace Application.DAL
                 return GetSet().OrderBy(orderByExpression)
                     .Skip(pageCount * pageIndex)
                     .Take(pageCount);
-            }else
+            }
+            else
             {
                 return GetSet().OrderByDescending(orderByExpression)
                     .Skip(pageCount * pageIndex)
